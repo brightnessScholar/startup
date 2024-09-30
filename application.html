@@ -27,6 +27,19 @@
             </form>
         </nav>
 
+        <div id="welcome-message"></div>
+
+    <script>
+        // Check if user data exists in Local Storage
+        const username = localStorage.getItem('username');
+
+        if (username) {
+            document.getElementById('welcome-message').textContent = `Welcome back, ${username}!`;
+        } else {
+            document.getElementById('welcome-message').textContent = 'Please log in.';
+        }
+    </script>
+
     </body>
 
     <! Add a link to return to the main home page of website >
