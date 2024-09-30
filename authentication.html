@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <! Rewrote my user login using my own code >
+    <! Code to make a login for my users >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,28 +8,24 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color:#f4f4f4;
-            padding: 20px;
         }
         .container {
-            width: 300px;
+            width: 500px;
             background: white;
         }
         input[type="text"], input[type="password"] {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
         }
         button {
-            width: 100%;
-            background: #007BFF;
+            width: 500px;
+            background: #618f63;
             color: white;
             cursor: pointer;
         }
         button:hover {
-            background: #0056b3;
+            background: #78ad79;
         }
         .username-display {
             margin-top: 20px;
@@ -39,7 +35,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Login</h1>
+        <h1>Homework Hub Login</h1>
         <form id="login-form">
             <input type="text" id="username" placeholder="Username" required>
             <input type="password" id="password" placeholder="Password" required>
@@ -52,7 +48,7 @@
 
     <button id="logout-button">Logout</button>
 
-    <! This script allows us to store locally the user's login on this html file >
+    <! This script allows us to store the user's login data >
     <script>
         document.getElementById('login-form').addEventListener('submit', function(event) {
             event.preventDefault();
