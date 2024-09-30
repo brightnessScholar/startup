@@ -13,16 +13,31 @@
         <! I will make a calendar once I learn how to do that in css and javascript >  
         <p><img alt="octoberCalendar" src="https://i.postimg.cc/G2mywGMn/calendar-October.webp" height="300px" width="900px" /></p>
         
-        <nav> 
-            <! Eventually I'll make the list more interractive so that the user can add their own classes >
-            <h3>My Classes:</h3>
-            <ul>
-                <li>History 201</li>
-                <li>Chemistry 101</li>
-                <li>CS 260</li>
-                <li>The Eternal Family</li>
-            </ul>
-        </nav>
+        <h1>My Classes</h1>
+        <form id="item-form">
+            <input type="text" id="item-input" placeholder="Add a new item" required>
+            <button type="submit">Add</button>
+        </form>
+        <ul id="item-list"></ul>
+
+        <script>
+            document.getElementById('item-form').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent form submission
+
+                const input = document.getElementById('item-input');
+                const newItemText = input.value;
+
+                // Create a new list item 
+                const newItem = document.createElement('li');
+                newItem.textContent = newItemText;
+
+                // Add the new item to the list
+                document.getElementById('item-list').appendChild(newItem);
+
+                // Clear the input field
+                input.value = '';
+            });
+        </script>
 
     </body>
 
