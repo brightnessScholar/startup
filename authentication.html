@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <! Basic form code from Chatgpt until we learn in class how to do this better >
+    <! Rewrote my user login using my own code >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Login</title>
+    <title>Homework Hub login</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color:#f4f4f4;
             padding: 20px;
         }
         .container {
-            max-width: 400px;
-            margin: auto;
-            padding: 20px;
+            width: 300px;
             background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         input[type="text"], input[type="password"] {
             width: 100%;
@@ -28,11 +24,8 @@
         }
         button {
             width: 100%;
-            padding: 10px;
             background: #007BFF;
             color: white;
-            border: none;
-            border-radius: 4px;
             cursor: pointer;
         }
         button:hover {
@@ -53,7 +46,7 @@
             <button type="submit">Login</button>
         </form>
         <div class="username-display" id="username-display">
-            <h2>Welcome, <span id="display-name"></span>!</h2>
+            <h2>Hello, <span id="display-name"></span>!</h2>
         </div>
     </div>
 
@@ -62,12 +55,11 @@
     <! This script allows us to store locally the user's login on this html file >
     <script>
         document.getElementById('login-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form submission
+            event.preventDefault();
     
             const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value; // Assuming you'll handle password securely
+            const password = document.getElementById('password').value;
     
-            // Simulate a login (in a real application, you'd validate against a database)
             if (username) {
                 // Save username to Local Storage
                 localStorage.setItem('username', username);
@@ -84,8 +76,8 @@
         //logout button options - doesn't work all the way yet!
         document.getElementById('logout-button').addEventListener('click', function() {
         localStorage.removeItem('username');
-        // Redirect to login page or refresh
-        window.location.href = 'login.html'; // Update with your login page URL
+        // Redirect to login page
+        window.location.href = 'authentication.html';
         });
     </script>
 </body>
