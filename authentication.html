@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+</head>
+<body>
+    <h1>Create an Account</h1>
+    <form id="registration-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        
+        <button type="submit">Make Your Account</button>
+    </form>
+
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            // Here, you would typically send the form data to your server
+            const formData = new FormData(event.target);
+            // Example of how to handle the data (to be replaced with actual logic)
+            console.log('Username:', formData.get('username'));
+            console.log('Email:', formData.get('email'));
+            console.log('Password:', formData.get('password'));
+        });
+    </script>
+</body>
+</html>
