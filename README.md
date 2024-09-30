@@ -50,3 +50,19 @@ Calendar.png
 
 ![Image of a school schedule and progress report page on my website.]
 School Schedule.png
+
+---------------------------------------------------------------------------------------------------------------------------------------
+## Startup HTML Project - Update (September 29th)
+For this section of the project, I created 5 html files:
+* index.html
+    - This will be my main html (homepage). Here is where I placed links to all the other elements in my program and this is the main screen when people go to my website. I added an image, a navigation bar, and a link to my Github in the footer.
+* application.html
+    - This page is where my task element will be. Users can come to this section of the website to add tasks to their schedule. I created a list that is adaptable by the user as well as an image element and a "return to home" link.
+* database.html
+    - This page is where I will add a calendar element to my website. I'm not sure how to do that quite yet because it involves a lot of css and javascript as well but it will be there. The calendar will showcase added classes and tasks and when they are taking place.
+    - I also added a list of classes that is adaptable so that the user can add classes.
+* authentication.html
+    - This is where the user will sign in to their account. Having an account will save all of their progress and changes on the website including their added classes and tasks.
+* websocket.html
+    - Finally, I added this page as a potential forum where people can give feedback to me on how to improve the website. I also want to make a forum where people can post their thoughts and ideas on how to manage tasks better (but I haven't added this element yet).
+
