@@ -15,6 +15,7 @@ body {
     text-decoration-color: white;
     text-decoration-line: overline underline;
     color: #f5faf6;
+    text-align: center;
   }
 
   ul {
@@ -22,11 +23,13 @@ body {
     position: fixed;
     margin: 0;
     padding: 0;
+    background-color: #21632c;
   }
 
   li {
     display: inline;
     float: left;
+    border-right: 1px solid #bbb;
   }
 
   li a {
@@ -35,6 +38,7 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    background-color: #21632c;
   }
 
   li a:hover {
