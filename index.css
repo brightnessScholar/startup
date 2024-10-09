@@ -2,28 +2,39 @@ body {
     display: flex;
     flex-direction: column;
     min-width: 375px;
-    background-color:#e3d5af;
-  }
+    background-color: #F2E5BF;
+    margin:0;
+    padding: 0;
+}
 
   header {
-    flex: 0 80px;
-    background-color: #387541;
+    display: flex;
+    width: 100vw;
+    background-color: #257180;
   }
 
   h1 {
-    flex: 0 80px;
-    text-decoration-color: white;
-    text-decoration-line: overline underline;
-    color: #f5faf6;
+    margin: 0;
+    padding: 0;
+    background-color: #257180; /* Your background color */
+    color: white; /* Text color */
+    width: 1920px; /* Full viewport width */
+    height: 100px; /* Full viewport height */
+    display: flex; /* Flexbox inside h1 for centering text */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-size: 3vw; /* Adjust the font size */
     text-align: center;
+    font-family: "Courier New";
   }
 
   ul {
     list-style-type: none;
+    width: 1450px;
     position: fixed;
     margin: 0;
     padding: 0;
-    background-color: #21632c;
+    background-color: #CB6040;
   }
 
   li {
@@ -38,15 +49,15 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    background-color: #21632c;
+    background-color: #CB6040;
   }
 
   li a:hover {
-    background-color: #d7d9d7;
+    background-color: #FD8B51;
   }
 
   .active {
-    background-color: #60a66b;
+    background-color: #FD8B51;
   }
 
   main {
