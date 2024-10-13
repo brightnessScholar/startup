@@ -2,9 +2,10 @@ body {
     display: flex;
     flex-direction: column;
     min-width: 375px;
+    height: 100%;
     background-color: #F2E5BF;
     margin:0;
-    padding: 0;
+    padding-bottom: 50px;
 }
 
   header {
@@ -61,21 +62,38 @@ body {
   }
 
   main {
-    flex: 1 calc(100vh - 110px);
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
   }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content {
+    flex: 1; /* Take up remaining space */
+}
   
   footer {
-    flex: 0 30px;
-  }
-  
-  menu {
-    flex: 1;
     display: flex;
-    /*  overwrite Bootstrap so the menu does not wrap */
-    flex-direction: row !important;
-    list-style: none;
+    position: fixed;
+    margin: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #257180;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    z-index: 9999;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-size: 1vw; /* Adjust the font size */
+    text-align: center;
+    font-family: "Courier New";
   }
