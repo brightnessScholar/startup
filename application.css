@@ -1,27 +1,99 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 375px;
+  height: 100%;
+  background-color: #F2E5BF;
+  margin:0;
+  padding-bottom: 50px;
+}
+
+header {
+  display: flex;
+  width: 100vw;
+  background-color: #257180;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  background-color: #257180; /* Your background color */
+  color: white; /* Text color */
+  width: 1920px; /* Full viewport width */
+  height: 100px; /* Full viewport height */
+  display: flex; /* Flexbox inside h1 for centering text */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-size: 3vw; /* Adjust the font size */
+  text-align: center;
+  font-family: "Courier New";
+}
+
 ul {
-    list-style-type: none;
-    position: fixed;
-    margin: 0;
-    padding: 0;
-  }
+  list-style-type: none;
+  width: 1450px;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  background-color: #CB6040;
+}
 
-  li {
-    display: inline;
-    float: left;
-  }
+li {
+  display: inline;
+  float: left;
+  border-right: 1px solid #bbb;
+}
 
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  background-color: #CB6040;
+}
 
-  li a:hover {
-    background-color: #d7d9d7;
-  }
+li a:hover {
+  background-color: #FD8B51;
+}
 
-  .active {
-    background-color: #60a66b;
-  }
+.active {
+  background-color: #FD8B51;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  flex: 1; /* Take up remaining space */
+}
+
+footer {
+  display: flex;
+  position: fixed;
+  margin: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #257180;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  z-index: 9999;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-size: 1vw; /* Adjust the font size */
+  text-align: center;
+  font-family: "Courier New";
+}

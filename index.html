@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homework Hub</title>
-    <title>Navigation</title>
 </head>
     <body>
 
@@ -25,7 +24,35 @@
             </ul>
         </nav>
 
-        
+        <h2>Hub Login</h2>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+            .container {
+                width: 500px;
+                background: white;
+            }
+            input[type="text"], input[type="password"] {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+            }
+            button {
+                width: 500px;
+                background: #618f63;
+                color: white;
+                cursor: pointer;
+            }
+            button:hover {
+                background: #78ad79;
+            }
+            .username-display {
+                margin-top: 20px;
+                display: none;
+            }
+        </style>
 
         <!-- Will ask the user to sign in...once signed in, it will welcome them -->
         <div id="welcome-message"></div>
@@ -46,9 +73,46 @@
 
     <!-- Include a link to my gitHub on my website for TAs to access easily -->
     <div class="container">
-        <div class="content">
-            <!-- Your content here -->
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+         </form>
+         <div class="username-display" id="username-display">
+            <h2>Hello, <span id="display-name"></span>!</h2>
         </div>
+    </div>
+    
+        <button id="logout-button">Logout</button>
+    
+        <!-- This script allows us to store the user's login data -->
+        <script>
+            document.getElementById('login-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+        
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+        
+                if (username) {
+                    // Save username to Local Storage
+                    localStorage.setItem('username', username);
+        
+                    // Display the username
+                    document.getElementById('display-name').textContent = username;
+                    document.getElementById('username-display').style.display = 'block';
+        
+                    // Hide the login form
+                    this.style.display = 'none';
+                }
+            });
+    
+            //logout button options - doesn't work all the way yet!
+            document.getElementById('logout-button').addEventListener('click', function() {
+            localStorage.removeItem('username');
+            // Redirect to login page
+            window.location.href = 'authentication.html';
+            });
+        </script>
         <footer>
             <p><a href="https://github.com/brightnessScholar/startup">MyGithub</a></p>
         </footer>

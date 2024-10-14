@@ -32,7 +32,9 @@ body {
   ul {
     list-style-type: none;
     width: 1450px;
-    position: fixed;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
     margin: 0;
     padding: 0;
     background-color: #CB6040;
@@ -61,6 +63,20 @@ body {
     background-color: #FD8B51;
   }
 
+  h2 {
+    margin: 0;
+    padding: 0;
+    color: #FD8B51; /* Text color */
+    width: 1920px; /* Full viewport width */
+    height: 100px; /* Full viewport height */
+    display: flex; /* Flexbox inside h1 for centering text */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-size: 2vw; /* Adjust the font size */
+    text-align: center;
+    font-family: "Courier New";
+  }
+
   main {
     display: flex;
     flex: 1;
@@ -71,17 +87,21 @@ body {
 
   .container {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     height: 100%;
 }
 
 .content {
     flex: 1; /* Take up remaining space */
+    align-items: center;
+    justify-content: center;
 }
   
   footer {
     display: flex;
-    position: fixed;
+    position: sticky;
     margin: 0;
     bottom: 0;
     left: 0;
