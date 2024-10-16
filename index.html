@@ -20,11 +20,12 @@
 
         <style>
             body {
-                font-family: Arial, sans-serif;
+                font-family: 'Courier', sans-serif;
             }
             .container {
-                width: 500px;
-                background: white;
+                width: 70vh;
+                height: 20vh;
+                background: #99756f;
             }
             input[type="text"], input[type="password"] {
                 width: 100%;
@@ -33,12 +34,12 @@
             }
             button {
                 width: 500px;
-                background: #618f63;
+                background: #9e4f6b;
                 color: white;
                 cursor: pointer;
             }
             button:hover {
-                background: #78ad79;
+                background: #c77a95;
             }
             .username-display {
                 margin-top: 20px;
@@ -50,7 +51,7 @@
         <div id="welcome-message"></div>
 
     <!-- This script allows us to store locally the user's login on this html file -->
-    <script>
+   <script>
         // Check if user data exists in Local Storage
         const username = localStorage.getItem('username');
 
@@ -59,7 +60,7 @@
         } else {
             document.getElementById('welcome-message').textContent = 'Please log in.';
         }
-    </script>
+    </script> 
 
     </body>
 
@@ -71,7 +72,7 @@
             <button type="submit">Login</button>
          </form>
          <div class="username-display" id="username-display">
-            <h2>Hello, <span id="display-name"></span>!</h2>
+            <h2><p>Hello, <span id="display-name"></span>!</p></h2>
         </div>
     </div>
     
