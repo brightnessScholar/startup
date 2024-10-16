@@ -19,19 +19,30 @@ head {
 nav {
   /*background-color: #333; /* Dark background for the nav */
   overflow: hidden; /* Prevent floating issues */
-  width: 100vw;
+  width: 100%;
   display: flex;
+  padding: 10px 0;
+  position: fixed;
+  justify-content: space-around;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  font-family: 'Courier', sans-serif;
 }
 
 nav ul {
   list-style-type: none; /* Remove default list bullets */
   margin: 0;
   padding: 0;
+  width: 100%;
+  display: flex;
   text-align: center;
+  justify-content: space-around;
 }
 
 nav ul li {
-  float: left; /* Align menu items horizontally */
+  list-style: none;
+  /* float: left; */
 }
 
 nav ul li a {
@@ -40,30 +51,40 @@ nav ul li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none; /* Remove underlines from links */
+  font-size: 3vh;
 }
 
 nav ul li a:hover {
-  background-color: #111; /* Darker shade when hovered */
+  background-color: #99756f; /* Darker shade when hovered */
 }
 
 nav ul li a.active {
-  background-color: #4CAF50; /* Highlight the active link */
+  background-color: #e3d4d4; /* Highlight the active link */
 }
 
-/* Clearfix for the floating elements */
-nav::after {
-  content: "";
-  clear: both;
-  display: table;
+/* For mobile devices */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Stack the items vertically on small screens */
+    align-items: center; /* Center items horizontally */
+  }
+
+  nav ul li a {
+    padding: 10px 20px; /* Adjust padding for smaller screens */
+  }
 }
+
 
 /* Basic styling for the header */
 h2 {
+  font-family: 'Courier', sans-serif;
+  margin: 0;
+  padding: 0;
   text-align: center;
-  color: #333;
-  margin-top: 20px;
+  color: #9e4f6b;
+  font-size: 8vh;
 }
-
+/*
   main {
     display: flex;
     flex: 1;
@@ -71,13 +92,20 @@ h2 {
     align-items: center;
     justify-content: center;
   }
+    */
 
   .container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100%;
+    /*flex-grow: 1; */
+    max-width: 1200px; /* Limit width to 1200px, adjust as needed */
+    max-height: 1000px;
+    margin: 0 auto; /* Center the content */
+    padding: 20px;
+    text-align: center;
+    margin-top: 80px;
 }
 
 .content {
