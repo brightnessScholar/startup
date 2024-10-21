@@ -288,20 +288,184 @@ Midterm Questions
     -It's ideal when you need to compute a new value for each element and return that value in a new array.
 
 ***What does the following code output using getElementByID and addEventListener?**
-    -getElementById() is a method in JavaScript that is used to select an HTML element by its unique id attribute
-    -It returns the first element within the document that matches the specified id
-    document.getElementById("id");
-    ^^^"id": The string value of the id attribute you want to target. This should be the unique ID of the element in the HTML.
-    
-    -The method returns the element with the specified id if it exists. If no element with the given id is found, it returns null.
+    -getElementById():
+        -getElementById() is a method in JavaScript that is used to select an HTML element by its unique id attribute
+        -It returns the first element within the document that matches the specified id
+        document.getElementById("id");
+        ^^^"id": The string value of the id attribute you want to target. This should be the unique ID of the element in the HTML.
+
+        -The method returns the element with the specified id if it exists. If no element with the given id is found, it returns null.
+        HTML:
+        <div id="myElement">Hello, World!</div>
+
+        JavaScript:
+        const element = document.getElementById("myElement");
+        console.log(element);  // Output: <div id="myElement">Hello, World!</div>
+        ^^^getElementById("myElement") selects the div element with id="myElement". The result is the actual HTML element.
+
+        -you can also use getElementByID to manipulate the element and manipulate the style of the element
+        -getElementById() is used to select an element by its unique id in the DOM.
+        -The element with the specified id or null if no matching element is found.
+        -Manipulating HTML elements (changing content, styles, or attributes) based on the id.
+    -addEventListener():
+        -addEventListener() function in JavaScript is used to attach an event handler (also known as an event listener) to an HTML element
+        -This function allows you to listen for a specific event (like a click, keypress, mouse movement, etc.) on an element and then execute a function when that event occurs
+        -It provides a more flexible and powerful way to handle events compared to older methods like onclick
+
+        element.addEventListener(event, callback, useCapture);
+            -event: A string representing the type of event to listen for (e.g., "click", "keydown", "mouseover", etc.).
+            -callback: The function that will be executed when the event occurs. This function is called the event handler or event listener.
+            -useCapture (optional): A Boolean that specifies whether the event should be captured during the capture phase (true) or the bubbling phase (false). Most of the time, you will leave this as false, but it can be useful for more advanced event handling.
+        Example:
+        HTML:
+        <button id="myButton">Click Me!</button>
+
+        JavaScript:
+        const button = document.getElementById("myButton");
+
+        // Adding a click event listener
+        button.addEventListener("click", function() {
+        alert("Button was clicked!");
+        });
+
+        -You can also remove an event listener if it's no longer needed, using the removeEventListener() method. However, to successfully remove an event listener, you need to pass the same function reference that was used with addEventListener().
+        -Unlike older methods (e.g., onclick), addEventListener() allows you to attach multiple event listeners to the same element for the same event type.
+        -It keeps your JavaScript code separate from your HTML, which is considered good practice in modern web development
+        -You can use addEventListener() to implement event delegation, which is especially useful for handling events on dynamically added elements
+
+***What does the following line of Javascript do using a # selector?**
+    -when you use # in a selector, it's typically part of a query selector (e.g., document.querySelector() or document.querySelectorAll()) to target an element by its id
+    -The # symbol is used to represent an ID selector in CSS, and JavaScript uses the same notation to find elements with a specific id
+    -When you use # in JavaScript with querySelector() or querySelectorAll(), it searches for an element that has a specific id attribute.
+        -querySelector("#myId") will select the first element that has the id="myId"
+        -querySelectorAll("#myId") will return a NodeList of all elements with the id="myId", although typically IDs should be unique
+    -Used as a CSS selector to target elements by their id
+    -REMEMBER: The id attribute should be unique within a page, meaning only one element should have a specific id
+
+***Which of the following are true? (mark all that are true about the DOM)**
+    -The DOM (Document Object Model) is a programming interface for web documents
+    -It represents the structure of an HTML or XML document as a tree of nodes, where each node is an object that represents a part of the document (such as an element, attribute, or text)
+    -The DOM allows you to programmatically access and manipulate the content, structure, and styles of a webpage using JavaScript or other programming languages.
+    -The DOM is an in-memory representation of the web page that allows you to interact with it dynamically
+    -The DOM represents a document as a tree structure. The document starts with a root node (typically the <html> tag), and everything else in the document (tags, text, attributes, etc.) is a "child" of that root.
+        -Each HTML element is a "node" in the tree
+
+    <html>
+        <head>
+            <title>My Page</title>
+        </head>
+        <body>
+            <h1>Welcome!</h1>
+            <p>This is a paragraph.</p>
+        </body>
+    </html>
+
+    DOM Model:
+    Document
+    └── html
+        ├── head
+        │    └── title
+        └── body
+            ├── h1
+            └── p
+
+    -Element nodes: Represent HTML tags (like <div>, <p>, <h1>, etc.)
+    -Text nodes: Represent the text inside HTML tags
+    -Attribute nodes: Represent the attributes of an element (like id, class, src, etc.)
+    -You can use JavaScript to interact with the DOM, and manipulate elements dynamically
+    HTML:
+    <div id="myDiv">Hello, World!</div>
+    <button onclick="changeText()">Change Text</button>
+
+    JavaScript:
+    function changeText() {
+        // Access the element by its ID
+        const div = document.getElementById("myDiv");
+  
+        // Change the text content of the div
+        div.textContent = "Hello, DOM!";
+    }
+
+    -DOM Methods for Access and Manipulation:
+        -Selecting Elements:
+            -getElementById(id): Selects an element by its id.
+            -getElementsByClassName(className): Selects elements by their class name.
+            -getElementsByTagName(tagName): Selects elements by their tag name.
+            -querySelector(selector): Selects the first element that matches the CSS selector.
+            -querySelectorAll(selector): Selects all elements that match the CSS selector.
+        -Manipulating Elements:
+            -.textContent: Get or set the text inside an element.
+            -.innerHTML: Get or set the HTML inside an element.
+            -.setAttribute(attr, value): Set an attribute of an element (like id, class, src, etc.).
+            -.style: Get or set the inline CSS styles of an element.
+        -Creating New Elements:
+            -document.createElement(tagName): Creates a new HTML element.
+            -appendChild(node): Adds a new child node to an element.
+            -removeChild(node): Removes a child node from an element.
+        -Event Handling:
+            -addEventListener(event, callback): Attach an event listener (like click, mouseover, etc.) to an element.
+            -removeEventListener(event, callback): Remove an event listener from an element.
+
+    -The DOM allows web pages to be dynamic
+        -You can update content, respond to user actions (like clicks or form submissions), and change the structure or style of the page without needing to reload it
+    -The DOM is essential for JavaScript to manipulate HTML documents, enabling the creation of interactive web applications.
+    -The DOM is standardized, meaning it works the same across different browsers (with minor exceptions), allowing you to write code that interacts with web documents in a consistent way.
+
+***By default, the HTML span element has a default CSS display property value of:**
+    -The HTML <span> element has a default CSS display property value of inline
+    -Elements with display: inline are displayed within the flow of text without starting a new line
+    -The <span> tag is typically used to style a portion of text or to group inline elements together without affecting the document's layout by breaking lines.
+    HTML:
+    <p>This is a <span style="color: red;">red</span> word within a sentence.</p>
+
+    CSS:
+    span {
+        display: inline;
+    }
+    ^^^the <span> element does not cause the text to break onto a new line, and the word "red" is displayed in red color, but it remains inline with the rest of the paragraph.
+
+***How would you use CSS to change all the div elements to have a background color of red?**
+    CSS:
+    div {
+        background-color: red;
+    }
+    ^^^This selector targets all <div> elements in the HTML document.
+    ^^^background-color: red;: This rule sets the background color of the targeted elements to red.
+
+***How would you display an image with a hyperlink in HTML?**
+    -To display an image with a hyperlink in HTML, you can use the <a> (anchor) tag to create a hyperlink and place the <img> tag inside it
+    HTML:
+    <a href="URL">
+        <img src="image-source.jpg" alt="Description of Image">
+    </a>
+    ^^^<a href="URL">: This creates a hyperlink. Replace "URL" with the link you want the image to navigate to when clicked.
+    ^^^<img src="image-source.jpg" alt="Description of Image">: This tag displays the image
+    ^^^"Description of Image" with a description for accessibility and SEO purposes.
+
+***In the CSS box model, what is the ordering of the box layers starting at the inside and working out?**
+    -Content: This is the actual content of the box (e.g., text, an image, or any other content inside the element). It is the innermost part of the box.
+        -This is where the actual content of the element (e.g., text or images) resides.
+    -Padding: Padding is the space between the content and the border. It adds space inside the element, between the content and the border, increasing the size of the box but not affecting the external layout.
+        -Adds spacing between the content and the border. It does not affect the space between the element and other elements outside of it.
+    -Border: The border wraps around the padding and content. It's a thin line that can be styled with width, color, and style (solid, dashed, etc.).
+        -Surrounds the content and padding. It can have a thickness and color.
+    -Margin: The margin is the outermost layer and creates space between the element's border and surrounding elements. It pushes other elements away and does not affect the size of the element itself.
+        -Provides external spacing between this element and other elements around it.
+
+    +-------------------------+
+    |       Margin             | <-- outermost layer
+    |  +-------------------+  |
+    |  |    Border          |  |
+    |  |  +-------------+  |  |
+    |  |  | Padding      |  |  |
+    |  |  |  +-------+  |  |  |
+    |  |  |  | Content|  |  |  |
+    |  |  |  +-------+  |  |  |
+    |  |  +-------------+  |  |
+    |  +-------------------+  |
+    +-------------------------+
 
 
-What does the following line of Javascript do using a # selector?
-Which of the following are true? (mark all that are true about the DOM)
-By default, the HTML span element has a default CSS display property value of: 
-How would you use CSS to change all the div elements to have a background color of red?
-How would you display an image with a hyperlink in HTML?
-In the CSS box model, what is the ordering of the box layers starting at the inside and working out?
 Given the following HTML, what CSS would you use to set the text "trouble" to green and leave the "double" text unaffected?
 What will the following code output when executed using a for loop and console.log?
 How would you use JavaScript to select an element with the id of “byu” and change the text color of that element to green?
