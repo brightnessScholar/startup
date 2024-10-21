@@ -715,11 +715,67 @@ Midterm Questions
     ssh -i /path/to/private_key user@hostname
     ^^^If you're using Ssh keys for more secure authentication
 
+***Which of the following is true when the -la parameter is specified for the ls console command?**
+    -When the -la parameter is specified with the ls command, it combines two options that affect the listing of files and directories
+    -l: long format
+        -Displays detailed information about each file or directory, such as:
+            -File type (e.g., - for a regular file, d for a directory).
+            -File permissions (e.g., rwxr-xr--).
+            -Number of hard links.
+            -Owner and group of the file.
+            -File size.
+            -Last modification date and time.
+            -File or directory name.
+    -a: show all files
+        -Displays all files, including hidden files (those starting with a .), like .bashrc or .gitignore
 
-Which of the following is true when the -la parameter is specified for the ls console command?
-Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain?
-Is a web certificate is necessary to use HTTPS.
-Can a DNS A record can point to an IP address or another A record.
+    ls -la
+
+    //Output:
+    drwxr-xr-x  3 user user 4096 Oct 21 10:00 .
+    drwxr-xr-x  5 user user 4096 Oct 21 09:00 ..
+    -rw-r--r--  1 user user   52 Oct 21 10:00 .bashrc
+    drwxr-xr-x  2 user user 4096 Oct 21 10:00 docs
+    -rw-r--r--  1 user user  123 Oct 21 09:45 file.txt  
+
+    -. represents the current directory.
+    -.. represents the parent directory.
+    -.bashrc is a hidden file.
+
+***Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain?**
+    -The root domain is the highest level in the domain name system (DNS). It is represented by a dot (.) at the end of any domain, though it’s usually implied and not shown.
+        -In the case of banana.fruit.bozo.click, the root domain is essentially the dot (.) at the end, which is not visible but exists in DNS infrastructure
+    -The Top-Level Domain (TLD) is the last part of the domain name, typically located immediately after the last dot
+        -In banana.fruit.bozo.click, the TLD is click
+    -A subdomain is any domain that exists under a higher-level domain. In this case, it would be everything to the left of the TLD
+        -In banana.fruit.bozo.click, both bozo and fruit are subdomains
+        -bozo is a subdomain of click, and fruit is a subdomain of bozo
+    -The root domain is the immediate domain under the TLD, and it is often called the second-level domain
+        -This is usually where you register your domain (the main name of your website)
+        -In banana.fruit.bozo.click, the root domain is bozo
+
+    . (root)
+    └── click (TLD)
+        └── bozo (root domain)
+            └── fruit (subdomain of bozo)
+                └── banana (subdomain of fruit)
+
+***Is a web certificate necessary to use HTTPS.**
+    -Yes, a web certificate is necessary to use HTTPS (Hypertext Transfer Protocol Secure)
+    -HTTPS relies on SSL/TLS encryption to secure the connection between a web server and a client (e.g., a web browser). For this encryption to work, the server must present a valid SSL/TLS certificate to the client
+        -Encryption: The certificate facilitates the encryption of data being transmitted between the server and the client, ensuring that sensitive information (like login credentials or payment details) cannot be easily intercepted or read by attackers
+        -Authentication: It proves that the server you're connecting to is indeed the one you intend to connect to
+        -Trust: Web browsers come pre-installed with a list of trusted Certificate Authorities (CAs). When a server presents a valid certificate signed by one of these trusted authorities, the browser knows the site is legitimate
+    -Types of SSL certificates:
+        -Domain Validated (DV): Validates the domain ownership. Quick to obtain
+        -Organization Validated (OV): Includes domain and organizational validation. More trustworthy
+        -Extended Validation (EV): Provides the highest level of verification. Often shows the organization name in the browser's address bar
+    -Without a certificate, browsers will show a "Not Secure" warning when accessing a site with HTTP
+    -if certificate is valid, it shows a padlock icon in the address bar, signifying the site is secure.
+
+***Can a DNS A record can point to an IP address or another A record.**
+
+
 Port 443, 80, 22 is reserved for which protocol?
 What will the following code using Promises output when executed?
 
