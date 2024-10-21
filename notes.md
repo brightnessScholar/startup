@@ -465,20 +465,257 @@ Midterm Questions
     |  +-------------------+  |
     +-------------------------+
 
+***Given the following HTML, what CSS would you use to set the text "trouble" to green and leave the "double" text unaffected?**
+    -Use the span element:
+    HTML:
+    <p>This is a <span class="green-text">trouble</span> sentence with double trouble.</p>
 
-Given the following HTML, what CSS would you use to set the text "trouble" to green and leave the "double" text unaffected?
-What will the following code output when executed using a for loop and console.log?
-How would you use JavaScript to select an element with the id of “byu” and change the text color of that element to green?
-What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading?
-How do you declare the document type to be html?
-What is valid javascript syntax for if, else, for, while, switch statements?
-What is the correct syntax for creating a javascript object?
-Is it possible to add new properties to javascript objects?
-If you want to include JavaScript on an HTML page, which tag do you use?
-Given the following HTML, what JavaScript could you use to set the text "animal" to "crow" and leave the "fish" text unaffected?
-Which of the following correctly describes JSON?
-What does the console command chmod, pwd, cd, ls, vim, nano, mkdir, mv, rm, man, ssh, ps, wget, sudo  do?
-Which of the following console command creates a remote shell session?
+    CSS:
+    .green-text {
+        color: green;
+    }
+
+***What will the following code output when executed using a for loop and console.log?**
+    -console.log() is a method used to print messages or values to the console
+
+***How would you use JavaScript to select an element with the id of “byu” and change the text color of that element to green?**
+    -Use document.getElementById() to select the element by its id.
+    -Use the style property to change the color of the selected element.
+    HTML:
+    <p id="byu">This text will be changed to green.</p>
+
+    JavaScript:
+    // Select the element with id "byu"
+    var element = document.getElementById("byu");
+
+    // Change the text color to green
+    element.style.color = "green";
+
+***What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading?**
+    -Paragraph - <p>
+    -Ordered list - <ol>
+    -Unordered list - <ul>
+    -Second level heading - <h2>
+    -First level heading - <h1>
+    -Third level heading - <h3>
+
+***How do you declare the document type to be html?**
+    <!DOCTYPE html>
+    -use the DOCTYPE declaration at the very beginning of your HTML document
+    -it's an instruction to the browser about what type of document to expect, so the browser knows how to render the content correctly
+    -It ensures the browser renders the page in standards mode, which helps avoid quirks mode (a compatibility mode for older versions of HTML)
+
+***What is valid javascript syntax for if, else, for, while, switch statements?**
+    -If statements:
+    if (condition) {
+        // Code to be executed if the condition is true
+    }
+    -Else:
+    if (condition) {
+        // Code to be executed if condition is true
+    } else {
+        // Code to be executed if condition is false
+    }
+    -For:
+    for (initialization; condition; increment) {
+        // Code to be executed in each loop iteration
+    }
+    -While:
+    while (condition) {
+        // Code to be executed while the condition is true
+    }
+    -Switch:
+    switch (expression) {
+        case value1:
+            // Code to execute if expression === value1
+            break;
+        case value2:
+            // Code to execute if expression === value2
+            break;
+        default:
+            // Code to execute if none of the cases match
+    }
+    ^^^A way to match an expression against multiple possible values (case
+
+***What is the correct syntax for creating a javascript object?**
+    JavaScript:
+    const objectName = {
+        key1: value1,
+        key2: value2,
+        key3: value3
+    };
+
+    -Accessing object properties:
+        -Dot notation:
+        console.log(person.name); // Output: John
+
+        -Bracket notation:
+        console.log(person['age']); // Output: 30
+
+***Is it possible to add new properties to javascript objects?**
+    -Yes using dot notation or bracket notation
+    -Dot notation:
+    const person = {
+        name: "John",
+        age: 30
+    };
+
+    // Adding a new property 'job' using dot notation
+    person.job = "Developer";
+
+    console.log(person);
+    // Output: { name: "John", age: 30, job: "Developer" }
+
+    -Bracket Notation:
+    const person = {
+        name: "John",
+        age: 30
+    };
+
+    // Adding a new property 'isEmployed' using bracket notation
+    person['isEmployed'] = true;
+
+    console.log(person);
+    // Output: { name: "John", age: 30, isEmployed: true }
+
+    -You can use Object.defineProperty() to add a property with more control over the property's attributes (like its enumerability, writability, and configurability)
+    const person = {
+        name: "John",
+        age: 30
+    };
+
+    // Adding a property using Object.defineProperty()
+    Object.defineProperty(person, 'isEmployed', {
+        value: true,
+        writable: true,     // Can the property be changed?
+        enumerable: true,  // Should the property show up in loops?
+        configurable: true // Can the property be deleted or modified?
+    });
+
+    console.log(person);
+    // Output: { name: "John", age: 30, isEmployed: true }
+
+***If you want to include JavaScript on an HTML page, which tag do you use?**
+    -To include JavaScript in an HTML page, you use the <script> tag.
+    HTML:
+    <script>
+        // JavaScript code goes here
+    </script>
+
+    -In order to add an external javascript file, specify the src attribute of <script>
+    HTML:
+    <script src="script.js"></script>
+
+    -It's common to place the <script> tag at the end of the <body> tag, just before the closing </body> tag
+        -This ensures that the HTML content is fully loaded before the JavaScript code runs
+
+***Given the following HTML, what JavaScript could you use to set the text "animal" to "crow" and leave the "fish" text unaffected?**
+    -You can use document.getElementById() to select the element with the id of "animal" and then change its textContent to "crow"
+    HTML:
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Change Text Example</title>
+        </head>
+        <body>
+            <p id="animal">animal</p>
+            <p id="fish">fish</p>
+            <script>
+            // Change the text of the element with id "animal" to "crow"
+            document.getElementById("animal").textContent = "crow";
+            </script>
+        </body>
+    </html>
+
+***Which of the following correctly describes JSON?**
+    -JSON (JavaScript Object Notation) is a lightweight, text-based format for storing and exchanging data
+    -JSON is often used in web applications to exchange data between a server and a client, especially in APIs
+    JSON example:
+    {
+        "name": "John Doe",
+        "age": 30,
+        "isEmployed": true,
+        "hobbies": ["reading", "gaming", "coding"]
+    }
+
+    -Data is represented as key-value pairs.
+    -Keys must be strings, and values can be strings, numbers, booleans, arrays, or even other objects
+    -Arrays are ordered lists of values enclosed in square brackets ([]), while objects are collections of key-value pairs enclosed in curly braces ({})
+    -Many web services and REST APIs return data in JSON format
+
+***What does the console command chmod, pwd, cd, ls, vim, nano, mkdir, mv, rm, man, ssh, ps, wget, sudo  do?**
+    -Chmod:
+        -Changes the permissions of a file or directory.
+        -Syntax: chmod [permissions] [file]
+        -Example: chmod 755 file.txt (gives read, write, and execute permissions to the owner and read/execute permissions to others).
+    -Pwd (Print Working Directory):
+        -Shows the current directory you're in.
+        -Example: If you're in /home/user/docs, running pwd will print /home/user/docs.
+    -Cd (Current Directory):
+        -Changes the current directory.
+        -Syntax: cd [directory]
+        -Example: cd /var/log will move to the /var/log directory.
+        -To go back to the home directory, you can use cd ~ or just cd.
+    -Ls (List):
+        -Lists files and directories in the current directory.
+        -Syntax: ls [options]
+        -Example: ls -l (lists detailed file info), ls -a (shows hidden files).
+    -Vim:
+        -A powerful text editor.
+        -Syntax: vim [file]
+        -Example: vim myfile.txt opens the file myfile.txt in the Vim editor. Vim has a learning curve but is widely used for its efficiency in editing files.
+    -Nano:
+        -A simple text editor for the terminal, more beginner-friendly than Vim.
+        -Syntax: nano [file]
+        -Example: nano myfile.txt opens the file in Nano.
+    -Mkdir (Make Directory):
+        -Creates a new directory.
+        -Syntax: mkdir [directory_name]
+        -Example: mkdir new_folder creates a folder named new_folder.
+    -Mv (Move):
+        -Moves or renames files and directories.
+        -Syntax: mv [source] [destination]
+        -Example: mv file.txt /newfolder/ moves file.txt to /newfolder/.
+        -To rename: mv oldname.txt newname.txt.
+    -Rm (Remove):
+        -Deletes files or directories.
+        -Syntax: rm [options] [file]
+        -Example: rm file.txt deletes the file file.txt.
+        -To remove a directory and its contents: rm -r mydir.
+    -Man (Manual):
+        -Displays the manual page for a command.
+        -Syntax: man [command]
+        -Example: man ls shows detailed information about the ls command. 
+    -Ssh (Secure Shell):
+        -Connects to a remote machine securely via command-line.
+        -Syntax: ssh [user]@[hostname]
+        -Example: ssh user@192.168.1.2 connects to the machine at IP address 192.168.1.2 as user user.
+    -Ps (Process Status):
+        -Displays a list of currently running processes.
+        -Syntax: ps [options]
+        -Example: ps aux shows all processes running on the system, along with detailed info.    
+    -Wget:
+        -A command-line utility to download files from the web.
+        -Syntax: wget [URL]
+        -Example: wget http://example.com/file.zip downloads the file file.zip from example.com.
+    -Sudo (Superuser Do):
+        -Executes a command with superuser (root) privileges.
+        -Syntax: sudo [command]
+        -Example: sudo apt update runs the apt update command with superuser permissions (needed for installing/updating packages).
+
+***Which of the following console command creates a remote shell session?**
+    -The console command that creates a remote shell session is ssh (Secure Shell)
+    -It allows you to securely connect to a remote machine and execute commands as if you were sitting right in front of it
+
+    ssh [user]@[hostname_or_IP_address]
+    ^^^Once connected, you'll be able to run commands on the remote machine as though you're using its terminal locally
+
+    ssh -i /path/to/private_key user@hostname
+    ^^^If you're using Ssh keys for more secure authentication
+
+
 Which of the following is true when the -la parameter is specified for the ls console command?
 Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain?
 Is a web certificate is necessary to use HTTPS.
