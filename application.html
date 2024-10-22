@@ -1,20 +1,20 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <!-- Include a header, footer, body, navigation, main, -->
 <head>
     <link rel="stylesheet" href="application.css"/>
     <!-- I will use two titles on this page: Tasks (the title of the page) and a return to home navigation button -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+    <title>Clock Example</title>
+    <link rel="stylesheet" href="styles.css">
+
 </head>
     <body>
-        <div class="header">
-            <header>
-                <h1>Tasks</h1>
-            </header>
-        </div>
         <div class="navigationBar">
             <nav> 
-                <!-- make a basic naviation menu for users of my website to use to access the other elements of my project -->
-                <h3>Navigation:</h3>
                 <ul>
                     <li><a href="application.html">Tasks</a></li>
                     <li><a href="authentication.html">Sign in here</a></li>
@@ -24,20 +24,48 @@
                 </ul>
             </nav>
         </div>
+
+        <style>
+            /* Optional styling */
+            img {
+                display: flex;
+                max-width: 100%; /* Makes image responsive */
+                height: 500px; /* Maintains aspect ratio */
+            }
+        </style>
+
         <div class="taskList">
-            <nav> 
-                <form>
-                    <label>
-                        <input type="checkbox" name="item1" value="task1"> Task 1
-                    </label><br>
-                    <label>
-                        <input type="checkbox" name="item2" value="task2"> Task 2
-                    </label><br>
-                    <label>
-                        <input type="checkbox" name="item3" value="task3"> Task 3
-                    </label>
-                </form>
-            </nav>
+            
+            <img src="https://i.postimg.cc/05p8hRvx/toDoList.webp" alt="toDoList">
+
+            <h1>Current Time</h1>
+            <div id="clock" class="clock"></div>
+            <script src="script.js"></script>
+            
+            <script>
+                function updateClock() {
+                    const now = new Date();
+                    const hours = String(now.getHours()).padStart(2, '0');
+                    const minutes = String(now.getMinutes()).padStart(2, '0');
+                    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+                    const timeString = `${hours}:${minutes}:${seconds}`;
+                    document.getElementById('clock').textContent = timeString;
+                }
+
+                // Initial call to display the clock immediately
+                updateClock();
+
+                // Update the clock every second
+                setInterval(updateClock, 1000);
+            </script>
+
+            <input type="text" id="taskInput" placeholder="Add a new task...">
+            <button id="addTaskButton">Add Task</button>
+
+            <ul id="taskList"></ul>
+
+            <script src="script.js"></script>
         </div>
 
 
@@ -51,6 +79,34 @@
         } else {
             document.getElementById('welcome-message').textContent = 'Please log in.';
         }
+    </script>
+
+    <!-- This script makes the task list adaptable by the user -->
+    <script>
+        document.getElementById('addTaskButton').addEventListener('click', function() {
+        const taskInput = document.getElementById('taskInput');
+        const taskValue = taskInput.value.trim();
+
+        if (taskValue) {
+            // Create a new list item
+            const li = document.createElement('li');
+            li.innerHTML = `<input type="checkbox"> ${taskValue}`;
+
+            // Add an event listener to the checkbox
+            const checkbox = li.querySelector('input[type="checkbox"]');
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    li.remove(); // Remove the list item when checked
+                }
+            });
+
+            // Append the new task to the task list
+            document.getElementById('taskList').appendChild(li);
+
+            // Clear the input
+            taskInput.value = '';
+                }
+        });
     </script>
 
     </body>
