@@ -1,35 +1,99 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+html, body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #d5aba4;
+  margin:0;
 }
 
-ul {
-    list-style-type: none;
-    position: fixed;
-    margin: 0;
-    padding: 0;
-  }
+head {
+margin: 0;
+padding: 0;
+display: flex;
+width: 100%;
+height: 100%;
+}
 
-  li {
-    display: inline;
-    float: left;
-  }
+/* Basic CSS for the navigation menu */
+nav {
+/*background-color: #333; /* Dark background for the nav */
+overflow: hidden; /* Prevent floating issues */
+width: 100%;
+display: flex;
+padding: 10px 0;
+position: fixed;
+justify-content: space-around;
+z-index: 1000;
+top: 0;
+left: 0;
+font-family: 'Courier', sans-serif;
+}
 
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
+nav ul {
+list-style-type: none; /* Remove default list bullets */
+margin: 0;
+padding: 0;
+width: 100%;
+display: flex;
+text-align: center;
+justify-content: space-around;
+}
 
-  li a:hover {
-    background-color: #d7d9d7;
-  }
+nav ul li {
+list-style: none;
+/* float: left; */
+}
 
-  .active {
-    background-color: #60a66b;
-  }
+nav ul li a {
+display: block;
+color: white; /* Text color */
+text-align: center;
+padding: 14px 16px;
+text-decoration: none; /* Remove underlines from links */
+font-size: 3vh;
+}
+
+nav ul li a:hover {
+background-color: #99756f; /* Darker shade when hovered */
+}
+
+nav ul li a.active {
+background-color: #e3d4d4; /* Highlight the active link */
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+nav ul {
+  flex-direction: column; /* Stack the items vertically on small screens */
+  align-items: center; /* Center items horizontally */
+}
+
+nav ul li a {
+  padding: 10px 20px; /* Adjust padding for smaller screens */
+}
+}
+
+.container {
+  font-family: 'Courier', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  /*flex-grow: 1; */
+  max-width: 1200px; /* Limit width to 1200px, adjust as needed */
+  max-height: 1000px; /* Center the content */
+  padding: 20px;
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 220px;
+}
+
+.content {
+  flex: 1; /* Take up remaining space */
+  align-items: center;
+  justify-content: center;
+}
 
 .calendar {
     width: 300px;
@@ -73,4 +137,23 @@ ul {
 .date:hover {
     background: #e0e0e0;
     cursor: pointer;
+}
+
+footer {
+  display: flex;
+  position: sticky;
+  margin: 0 0;
+  bottom: 0;
+  left: 0;
+  background-color: #c77a95;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  z-index: 9999;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-size: 1vw; /* Adjust the font size */
+  text-align: center;
+  font-family: "Courier New";
 }
