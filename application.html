@@ -31,6 +31,9 @@
                 display: flex;
                 max-width: 100%; /* Makes image responsive */
                 height: 500px; /* Maintains aspect ratio */
+                margin-top: 50px;
+                margin-bottom: 70px;
+                margin-left: 20px;
             }
         </style>
 
@@ -39,9 +42,9 @@
             <img src="https://i.postimg.cc/05p8hRvx/toDoList.webp" alt="toDoList">
 
             <h1>Current Time</h1>
-            <div id="clock" class="clock"></div>
+            <p><div id="clock" class="clock"></div></p>
             <script src="script.js"></script>
-            
+
             <script>
                 function updateClock() {
                     const now = new Date();

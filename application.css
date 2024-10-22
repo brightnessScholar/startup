@@ -74,16 +74,25 @@ background-color: #e3d4d4; /* Highlight the active link */
 }
 }
 
-.clock {
-  font-size: 2em;
-  color: #333;
-}
-
 .taskList {
   display: flex; /* Enable flexbox */
   justify-content: space-between; /* Space between items */
   align-items: flex-start;
   text-align: center;
+  font-family: 'Courier', sans-serif;
+  color: #9e4f6b;
+  font-size: 4em;
+}
+
+.clock {
+  display: block;
+  font-size: 2em;
+  font-family: 'Courier', sans-serif;
+  color: #69433f;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .taskList input[type="text"] {
