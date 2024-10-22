@@ -79,13 +79,22 @@ background-color: #e3d4d4; /* Highlight the active link */
   justify-content: space-between; /* Space between items */
   align-items: flex-start;
   text-align: center;
+  flex: column;
+}
+
+.taskList h1 {
   font-family: 'Courier', sans-serif;
   color: #9e4f6b;
   font-size: 4em;
+  flex: column;
 }
 
 .clock {
-  display: block;
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Space between items */
+  align-items: center;
+  text-align: center;
+  flex: column;
   font-size: 2em;
   font-family: 'Courier', sans-serif;
   color: #69433f;

@@ -40,28 +40,11 @@
         <div class="taskList">
             
             <img src="https://i.postimg.cc/05p8hRvx/toDoList.webp" alt="toDoList">
-
+        
             <h1>Current Time</h1>
-            <p><div id="clock" class="clock"></div></p>
+            <div id="clock" class="clock"></div>
             <script src="script.js"></script>
 
-            <script>
-                function updateClock() {
-                    const now = new Date();
-                    const hours = String(now.getHours()).padStart(2, '0');
-                    const minutes = String(now.getMinutes()).padStart(2, '0');
-                    const seconds = String(now.getSeconds()).padStart(2, '0');
-
-                    const timeString = `${hours}:${minutes}:${seconds}`;
-                    document.getElementById('clock').textContent = timeString;
-                }
-
-                // Initial call to display the clock immediately
-                updateClock();
-
-                // Update the clock every second
-                setInterval(updateClock, 1000);
-            </script>
 
             <input type="text" id="taskInput" placeholder="Add a new task...">
             <button id="addTaskButton">Add Task</button>
@@ -112,6 +95,24 @@
         });
     </script>
 
+    <!-- This is the script for my clock function -->
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('clock').textContent = timeString;
+        }
+
+        // Initial call to display the clock immediately
+        updateClock();
+
+        // Update the clock every second
+        setInterval(updateClock, 1000);
+    </script>
     </body>
 
     <!-- Add a link to return to the main home page of website -->
