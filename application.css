@@ -1,64 +1,77 @@
-body {
+html, body {
   display: flex;
   flex-direction: column;
-  min-width: 375px;
+  width: 100%;
   height: 100%;
-  background-color: #F2E5BF;
+  background-color: #d5aba4;
   margin:0;
-  padding-bottom: 50px;
 }
 
-header {
-  display: flex;
-  width: 100vw;
-  background-color: #257180;
+head {
+margin: 0;
+padding: 0;
+display: flex;
+width: 100%;
+height: 100%;
 }
 
-h1 {
-  margin: 0;
-  padding: 0;
-  background-color: #257180; /* Your background color */
-  color: white; /* Text color */
-  width: 1920px; /* Full viewport width */
-  height: 100px; /* Full viewport height */
-  display: flex; /* Flexbox inside h1 for centering text */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  font-size: 3vw; /* Adjust the font size */
-  text-align: center;
-  font-family: "Courier New";
+/* Basic CSS for the navigation menu */
+nav {
+/*background-color: #333; /* Dark background for the nav */
+overflow: hidden; /* Prevent floating issues */
+width: 100%;
+display: flex;
+padding: 10px 0;
+position: fixed;
+justify-content: space-around;
+z-index: 1000;
+top: 0;
+left: 0;
+font-family: 'Courier', sans-serif;
 }
 
-ul {
-  list-style-type: none;
-  width: 1450px;
-  position: fixed;
-  margin: 0;
-  padding: 0;
-  background-color: #CB6040;
+nav ul {
+list-style-type: none; /* Remove default list bullets */
+margin: 0;
+padding: 0;
+width: 100%;
+display: flex;
+text-align: center;
+justify-content: space-around;
 }
 
-li {
-  display: inline;
-  float: left;
-  border-right: 1px solid #bbb;
+nav ul li {
+list-style: none;
+/* float: left; */
 }
 
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  background-color: #CB6040;
+nav ul li a {
+display: block;
+color: white; /* Text color */
+text-align: center;
+padding: 14px 16px;
+text-decoration: none; /* Remove underlines from links */
+font-size: 3vh;
 }
 
-li a:hover {
-  background-color: #FD8B51;
+nav ul li a:hover {
+background-color: #99756f; /* Darker shade when hovered */
 }
 
-.active {
-  background-color: #FD8B51;
+nav ul li a.active {
+background-color: #e3d4d4; /* Highlight the active link */
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+nav ul {
+  flex-direction: column; /* Stack the items vertically on small screens */
+  align-items: center; /* Center items horizontally */
+}
+
+nav ul li a {
+  padding: 10px 20px; /* Adjust padding for smaller screens */
+}
 }
 
 main {

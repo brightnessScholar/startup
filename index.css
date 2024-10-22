@@ -82,7 +82,19 @@ h2 {
   margin: 0;
   padding: 0;
   margin-top: -30vh;
-  margin-bottom: 20vh;
+  /*margin-bottom: 20vh; */
+  text-align: center;
+  color: #9e4f6b;
+  font-size: 8vh;
+}
+
+h3 {
+  font-family: 'Courier', sans-serif;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  /* margin-top: -30vh;
+  /*margin-bottom: 20vh; */
   text-align: center;
   color: #9e4f6b;
   font-size: 8vh;
@@ -102,14 +114,14 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    flex-grow: 1; 
+    align-self: center;
+    /*flex-grow: 1; */
     max-width: 1200px; /* Limit width to 1200px, adjust as needed */
-    max-height: 1000px;
-    margin: 0 auto; /* Center the content */
+    max-height: 1000px; /* Center the content */
     padding: 20px;
     text-align: center;
-    margin-top: 80px;
+    margin-top: 70px;
+    margin-bottom: 220px;
 }
 
 .content {
