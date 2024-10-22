@@ -4,12 +4,9 @@
 <head>
     <link rel="stylesheet" href="database.css"/>
     <title>Class Schedule</title>
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js'></script>
 
-    <!-- Code for calendar element -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendar</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
     <body>
 
@@ -23,12 +20,67 @@
             </ul>
         </nav>
 
-        <header>
-            <h1>Class Schedule</h1>
-        </header>
-
         <!-- I will make a calendar once I learn how to do that in css and javascript -->  
-        <p><img alt="octoberCalendar" src="https://i.postimg.cc/G2mywGMn/calendar-October.webp" height="300px" width="900px" /></p>
+        <div id="calendar"></div>
+
+        <style>
+            #calendar {
+                width: 75%;
+                height: 60%;
+                margin: 40px auto; /* Center the calendar */
+                margin-top: 100px;
+            }
+            .fc {
+            border: 1px solid #99756f;
+            border-radius: 5px;
+            background: #d5aba4;
+        }
+
+        .fc-toolbar {
+            background: #d5aba4;
+            color: #69433f;
+        }
+
+        .fc-daygrid-day {
+            color: #69433f;
+        }
+
+        .fc-event {
+            background-color: #c77a95;
+            color: #ffffff;
+        }
+
+        .fc {
+            font-family: 'Courier', sans-serif;
+        }
+
+         /* Button styles */
+        .fc-button {
+            background-color: #9e4f6b;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .fc-button-primary {
+            background-color: #9e4f6b;
+            color: #ffffff;
+        }
+
+        .fc-button-secondary {
+            background-color: #9e4f6b;
+            color: #ffffff;
+        }
+
+        .fc-button:hover {
+            background-color: #c77a95;
+            color: #ffffff;
+        }
+        .fc-today {
+            background-color: #c77a95;
+            color: #c77a95; /* Change the text color */
+        }
+        </style>
 
         
         <h1>My Classes</h1>
@@ -38,8 +90,6 @@
         </form>
         <ul id="item-list"></ul>
 
-        <!-- Will ask the user to sign in...once signed in, it will welcome them -->
-        <div id="welcome-message"></div>
 
         <!-- This script allows us to store locally the user's login on this html file -->
         <script>
@@ -70,11 +120,32 @@
             }
         </script>
 
+        <!-- This is the script that creates my calendar using the JavaScript library -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var calendarEl = document.getElementById('calendar');
+        
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+                    initialView: 'dayGridMonth', // Default view
+                    headerToolbar: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                    },
+                    events: [
+                        // Add your events here
+                        { title: 'Event 1', start: '2023-10-01' },
+                        { title: 'Event 2', start: '2023-10-05', end: '2023-10-07' },
+                    ]
+                });
+        
+                calendar.render();
+            });
+        </script>
+
     </body>
 
-    <!-- Added a return to home button -->
     <footer>
-        <p><h3><a href="index.html">Return to Home</a></h3></p>
         <p><a href="https://github.com/brightnessScholar/startup">MyGithub</a></p>
     </footer>
 </html>
