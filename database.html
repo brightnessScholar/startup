@@ -9,6 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
 </head>
@@ -25,6 +26,7 @@
         </nav>
 
         <!-- I will make a calendar once I learn how to do that in css and javascript -->  
+
         <div id="calendar"></div>
 
 
@@ -87,6 +89,7 @@
         }
         </style>
 
+
         <script>
         $(document).ready(function() {
           $('#calendar').fullCalendar({
@@ -104,6 +107,26 @@
             },
             events: [], // Initially empty, can be populated with events from a backend
             editable: true, // Allow users to edit events
+
+            // Allow event deletion by clicking on them
+            eventClick: function(event, jsEvent, view) {
+                var deleteEvent = confirm("Do you want to delete this event?");
+                if (deleteEvent) {
+                $('#calendar').fullCalendar('removeEvents', event._id);
+            }
+            },
+
+            // Add new events when a day is clicked
+            dayClick: function(date, jsEvent, view) {
+                var title = prompt("Enter Event Title");
+                if (title) {
+                $('#calendar').fullCalendar('renderEvent', {
+                    title: title,
+                    start: date,
+                    allDay: true
+                    });
+                }
+            }
           });
         });
         </script>
