@@ -139,6 +139,30 @@ nav ul li a {
     cursor: pointer;
 }
 
+h2 {
+  font-family: 'Courier', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.item-form {
+  font-family: 'Courier', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.item-list {
+    font-family: 'Courier', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
 footer {
   display: flex;
   position: sticky;
