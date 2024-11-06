@@ -74,6 +74,29 @@ nav ul li a {
 }
 }
 
+h1 {
+  font-family: 'Courier', sans-serif;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  margin-top: -30vh;
+  /* margin-bottom: 20vh; */
+  margin-bottom: 7vh;
+  text-align: center;
+  color: #9e4f6b;
+  font-size: 8vh;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  text-align: left;
+  justify-content: space-around;
+  margin-bottom: 20vh;
+}
+
 footer {
   display: flex;
   position: sticky;

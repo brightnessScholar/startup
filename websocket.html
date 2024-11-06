@@ -21,6 +21,7 @@
     </nav>
 
     <h1>Submit Feedback Here</h1>
+    <div>
     <form id="response-form" action="https://example.com/submit" method="POST">
         <label for="name">Username:</label>
         <input type="text" id="name" name="name" required>
@@ -36,9 +37,46 @@
 
         <button type="submit">Submit</button>
     </form>
+    </div>
 
-    <!-- Will ask the user to sign in...once signed in, it will welcome them -->
-    <div id="welcome-message"></div>
+    <style>
+        label {
+            font-size: 4vh;
+            color: #99756f; /* Change text color */
+            font-family: 'Courier', sans-serif;
+            font-weight: bold;
+        }
+        input {
+            font-size: 16px;
+            padding: 8px 12px;   /* Space inside the input */
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 4px; /* Rounded corners */
+            width: 100%;         /* Make input take full width of its container */
+            box-sizing: border-box; /* Ensure padding doesn't affect width */
+        }
+
+        /* Optional: Add a background color when focused */
+        input:focus {
+            outline: none;        /* Remove default browser outline */
+            border-color: #e3d4d4; /* Blue border on focus */
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* Light blue glow */
+        }
+
+        textarea{
+            font-size: 16px;
+            padding: 8px 12px;   /* Space inside the input */
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 4px; /* Rounded corners */
+            width: 100%;         /* Make input take full width of its container */
+            box-sizing: border-box;
+        }
+
+        textarea:focus {
+            outline: none;        /* Remove default browser outline */
+            border-color: #e3d4d4; /* Blue border on focus */
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+        }
+    </style>
 
     <!-- This script allows us to store locally the user's login on this html file -->
     <script>
@@ -56,7 +94,6 @@
 
 <!-- Return to home button -->
 <footer>
-    <p><h3><a href="index.html">Return to Home</a></h3></p>
     <p><a href="https://github.com/brightnessScholar/startup">MyGithub</a></p>
 </footer>
 </html>
