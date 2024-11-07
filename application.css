@@ -96,17 +96,19 @@ background-color: #e3d4d4; /* Highlight the active link */
     display: flex;
     justify-content: center; /* Center image */
     align-items: center; /* Center image vertically */
+    margin-left: 10vh;
 }
 
 .right-column {
   flex: 2; /* Takes up two parts (2/3) of the width */
-    padding: 10px; /* Add some padding */
-    margin: -70px 0;
+    /* padding: 10px; /* Add some padding */
+    /* margin: -70px 0; */
     display: flex;
     flex-direction: column; /* Stack elements vertically */
     align-items: center; /* Center items horizontally */
     text-align: left; /* Center text */
     list-style-type: none;
+    width: 100%;
 }
 
 .clock {
