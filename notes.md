@@ -780,3 +780,18 @@ Port 443, 80, 22 is reserved for which protocol?
 What will the following code using Promises output when executed?
 
 
+
+***November 19th 2024***
+****CSS Startup****
+I finally deployed my CSS startup and the thing that was causing the problem was that I was typing in the deploy commands wrong into my terminal. Remember:
+    ./deployFiles.sh -k ~/Desktop/test.pem -h homework-hub.com -s simon
+    ./deployFiles.sh -k ~/Desktop/test.pem -h homework-hub.com -s startup
+
+- I was forgetting to put the path to my pem file in the command line and my startup was failing because it couldn't find my test.pem
+- Also, I learned that I could combine my index.css and my authentication.css files into one because having both was unnecessary for my program. I figure that I could just make the user sign in on the main page because eventually I will have to force them to sign in before they do anything on the website anyways.
+- I plan to change a couple of things in my database.css file eventually when I gain more tools from Mongo, which will let me store things in the backend
+- I eventaully want to allow the user to add events to the calendar on my database page in my website but I don't know how to use the backend all the way yet. Eventually we will get there.
+- The websocket page looks how I want it to look and it allows the user to sign in but again, it doesn't save the data to the backend part of the page yet so its pretty surface level. 
+- Overall, this is the general look I want my website to have aside from some little tweaks to the look of the application and database pages. 
+
+
