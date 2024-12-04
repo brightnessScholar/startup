@@ -74,6 +74,31 @@ background-color: #e3d4d4; /* Highlight the active link */
 }
 }
 
+img {
+  display: flex;
+  max-width: 100%; /* Makes image responsive */
+  height: 500px; /* Maintains aspect ratio */
+  margin-top: 50px;
+  margin-bottom: 70px;
+  margin-left: 20px;
+}
+
+input {
+  font-size: 4vh;
+  color: #99756f; /* Change text color */
+  font-family: 'Courier', sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px;
+}
+button {
+  font-size: 4vh;
+  color: #99756f; /* Change text color */
+  font-family: 'Courier', sans-serif;
+  font-weight: bold;
+}
+
 .taskList {
   display: flex; /* Enable flexbox */
   justify-content: space-between; /* Space between items */
