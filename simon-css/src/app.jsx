@@ -18,13 +18,11 @@ export default function App() {
                 Simon<sup>&reg;</sup>
               </div>
               <menu className='navbar-nav'>
-              {authState === AuthState.Authenticated && (
                 <li className='nav-item'>
                 <NavLink className='nav-link' to=''>
                     Login
                 </NavLink>
                 </li>
-                )}
                 {authState === AuthState.Authenticated && (
                 <li className='nav-item'>
                 <NavLink className='nav-link' to='play'>
@@ -39,13 +37,11 @@ export default function App() {
                 </NavLink>
                 </li>
                 )}
-                {authState === AuthState.Authenticated && (
                 <li className='nav-item'>
                 <NavLink className='nav-link' to='about'>
                     About
                 </NavLink>
                 </li>
-                )}
               </menu>
             </nav>
           </header>
@@ -65,7 +61,6 @@ export default function App() {
                 }
                 exact
                 />
-                <Route path='/' element={<Login />} exact />
                 <Route path='/play' element={<Play />} />
                 <Route path='/scores' element={<Scores />} />
                 <Route path='/about' element={<About />} />
