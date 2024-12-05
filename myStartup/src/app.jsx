@@ -1,7 +1,8 @@
 import React from 'react';
+import {BrowserRouter, NavLink, Route, Routes} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
-import Application from './application/application.jsx'
+import {Application} from './application/application';
 
 export default function App() {
     return (
