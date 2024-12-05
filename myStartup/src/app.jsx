@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
-import Application from '.application/application.jsx'
+import Application from './application/application.jsx'
 
 export default function App() {
     return (
@@ -14,24 +14,24 @@ export default function App() {
             </div>
             <menu className='navbar-nav'>
               <li className='nav-item'>
-                <a className='nav-link' href='index.html'>
+                <NavLink className='nav-link' to=''>
                   Home
-                </a>
+                </NavLink>
               </li>
               <li className='nav-item'>
-                <a className='nav-link' href='play.html'>
-                  Play
-                </a>
+                <NavLink className='nav-link' to='application'>
+                  Application
+                </NavLink>
               </li>
               <li className='nav-item'>
-                <a className='nav-link' href='scores.html'>
-                  Scores
-                </a>
+                <NavLink className='nav-link' to='database'>
+                  Database
+                </NavLink>
               </li>
               <li className='nav-item'>
-                <a className='nav-link' href='about.html'>
-                  About
-                </a>
+                <NavLink className='nav-link' to='websocket'>
+                  Websocket
+                </NavLink>
               </li>
             </menu>
           </nav>
@@ -52,9 +52,9 @@ export default function App() {
             }
             exact
           />
-          <Route path='/application' element={<Application userName={userName} />} />
+          <Route path='/application' element={<Application />} />
           <Route path='/database' element={<Database />} />
-          <Route path='/about' element={<About />} />
+          <Route path='/websocket' element={<Websocket />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
 
@@ -62,10 +62,10 @@ export default function App() {
   
         <footer className='bg-dark text-white-50'>
           <div className='container-fluid'>
-            <span className='text-reset'>Author Name(s)</span>
-            <a className='text-reset' href='https://github.com/webprogramming260/simon-react'>
+            <span className='text-reset'>Cadence Potter)</span>
+            <NavLink className='text-reset' to='https://github.com/webprogramming260/simon-react'>
               Source
-            </a>
+            </NavLink>
           </div>
         </footer>
       </div>
