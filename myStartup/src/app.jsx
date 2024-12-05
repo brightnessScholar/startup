@@ -3,6 +3,9 @@ import {BrowserRouter, NavLink, Route, Routes} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 import {Application} from './application/application';
+import {Login} from './login/login';
+import {Database} from './database/database';
+import {Websocket} from './websocket/websocket';
 
 export default function App() {
     return (
