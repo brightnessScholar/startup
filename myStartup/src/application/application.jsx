@@ -1,24 +1,24 @@
 import React from 'react'
 import './application.css';
-export function Application() {
+import Button from 'react-bootstrap/Button';
+export function Application(props) {
+    const [inputValue, setInputValue] = React.useState("")
 
+    function Delete() {
+        if (document.getElementById('jjj').checked) {
+            document.getElementById('jjj').remove(); // Remove the list item when checked
+        }
+    }
 
     function Clicking() {
-        const taskInput = document.getElementById('taskInput');
-        const taskValue = taskInput.value.trim();
-
+        const taskValue = inputValue;
         if (taskValue) {
             // Create a new list item
             const li = document.createElement('li');
             li.innerHTML = `<input type="checkbox"> ${taskValue}`;
-
             // Add an event listener to the checkbox
-            const checkbox = li.querySelector('input[type="checkbox"]');
-            checkbox.addEventListener('change', function() {
-                if (this.checked) {
-                    li.remove(); // Remove the list item when checked
-                }
-            });
+            
+
 
             // Append the new task to the task list
             document.getElementById('taskList').appendChild(li);
@@ -26,9 +26,9 @@ export function Application() {
             // Clear the input
             taskInput.value = '';
                 }
-        };
+        }
 
-        function updateClock() {
+       /* function updateClock() {
             const now = new Date();
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
@@ -41,21 +41,11 @@ export function Application() {
         updateClock();
 
         setInterval(updateClock, 1000);
+        */
     
     
 return (
     <body>
-        <div class="navigationBar">
-            <nav> 
-                <ul>
-                    <li style="float:right"><a class="active" href="application.html">Tasks</a></li>
-                    <li><a href="database.html">Your Classes</a></li>
-                    <li><a href="websocket.html">Help</a></li>
-                    <li><a href="index.html">Home</a></li>
-                </ul>
-            </nav>
-        </div>
-
         <div class="taskList">
             <div class="image">
                 <img src="https://i.postimg.cc/05p8hRvx/toDoList.webp" alt="toDoList"/>
@@ -65,9 +55,10 @@ return (
                 <div id="clock" class="clock"></div>
                 <script src="script.js"></script>
 
+                <input className = 'form-control' type = 'text' value = {inputValue} onChange = {(e) => setInputValue(e.target.value)}  id="taskInput" placeholder="Add a new task..."/>
+                <input type = 'checkbox' id = 'jjj' onChange = {()=> Delete()}/>
 
-                <input type="text" id="taskInput" placeholder="Add a new task..."/>
-                <button onClick={Clicking()} id="addTaskButton">Add Task</button>
+                <Button variant onClick={() =>Clicking()} id="addTaskButton">Add Task</Button>
 
                 <ul id="taskList"></ul>
 

@@ -4,7 +4,6 @@ import './websocket';
 export function Websocket() {
     
 return( 
-    <>
     <body>
 
         <h1>Submit Feedback Here</h1>
@@ -27,7 +26,6 @@ return(
         </div>
 
     </body>
-    </>
 );
 
 }
