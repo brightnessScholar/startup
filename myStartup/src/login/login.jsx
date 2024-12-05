@@ -2,8 +2,9 @@ import React from 'react'
 import './login.css';
 
 export function Login() {
-
-    document.getElementById('login-form').addEventListener('submit', function(event) {
+const [userName, setUserName] = React.useState(props.userName);
+const [password, setPassword] = React.useState(props.password);
+    function loginUser() {
         event.preventDefault();
 
         const username = document.getElementById('username').value;
@@ -20,7 +21,7 @@ export function Login() {
             // Hide the login form
             this.style.display = 'none';
         }
-    });
+    }
 
     //logout button options - doesn't work all the way yet!
     document.getElementById('logout-button').addEventListener('click', function() {
@@ -41,9 +42,9 @@ return (
 
     <div class="container">
         <form id="login-form">
-            <input type="text" id="username" placeholder="Username" required/>
-            <input type="password" id="password" placeholder="Password" required/>
-            <button type="submit">Login</button>
+            <input className = 'form-control' type="text" value = {userName} onChange = {(e) => setUserName(e.target.value)} id="username" placeholder="Username" required/>
+            <input className = 'form-control' type="text" value = {password} onChange = {(e) => setPassword(e.target.value)} id="password" placeholder="Password" required/>
+            <Button variant ='primary' onClick = {() => loginUser()}>Login</Button>
             <button id="logout-button">Logout</button>
          </form>
          <div class="username-display" id="username-display">

@@ -46,12 +46,12 @@ export default function App() {
             path='/'
             element={
               <Login
-                userName={userName}
-                authState={authState}
-                onAuthChange={(userName, authState) => {
-                  setAuthState(authState);
-                  setUserName(userName);
-                }}
+                //userName={userName}
+                //authState={authState}
+                //onAuthChange={(userName, authState) => {
+                  //setAuthState(authState);
+                  //setUserName(userName);
+                //}}
               />
             }
             exact
@@ -59,7 +59,6 @@ export default function App() {
           <Route path='/application' element={<Application />} />
           <Route path='/database' element={<Database />} />
           <Route path='/websocket' element={<Websocket />} />
-          <Route path='*' element={<NotFound />} />
         </Routes>
 
         <main>App components go here</main>
