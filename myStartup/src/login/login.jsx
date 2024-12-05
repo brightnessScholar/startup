@@ -1,14 +1,13 @@
 import React from 'react'
 import './login.css';
+import Button from 'react-bootstrap/Button';
 
-export function Login() {
+export function Login(props) {
 const [userName, setUserName] = React.useState(props.userName);
 const [password, setPassword] = React.useState(props.password);
     function loginUser() {
         event.preventDefault();
 
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
 
         if (username) {
             // Save username to Local Storage
@@ -23,35 +22,28 @@ const [password, setPassword] = React.useState(props.password);
         }
     }
 
-    //logout button options - doesn't work all the way yet!
-    document.getElementById('logout-button').addEventListener('click', function() {
+    //logout button options 
+    function logOut() { 
     localStorage.removeItem('username');
-    // Redirect to login page
-    window.location.href = 'authentication.html';
-    });
+    localStorage.removeItem('password');
+    }
 
 return (    
-<html>
-    
-<head>
-    <link rel="stylesheet" href="index.css"/>
-</head>
 <body>
 
     <h2>Homework Hub</h2>
 
-    <div class="container">
+    <div className="container">
         <form id="login-form">
             <input className = 'form-control' type="text" value = {userName} onChange = {(e) => setUserName(e.target.value)} id="username" placeholder="Username" required/>
             <input className = 'form-control' type="text" value = {password} onChange = {(e) => setPassword(e.target.value)} id="password" placeholder="Password" required/>
             <Button variant ='primary' onClick = {() => loginUser()}>Login</Button>
-            <button id="logout-button">Logout</button>
+            <Button variant = 'primary' onClick = {() => logOut()}>Logout</Button>
          </form>
-         <div class="username-display" id="username-display">
+         <div className="username-display" id="username-display">
             <h3><p>Welcome, <span id="display-name"></span>!</p></h3>
         </div>
     </div>
 </body>
-</html>
 )
 }

@@ -61,7 +61,7 @@ export function Database() {
     });
 
 return (    
-<div>
+<html>
 <head>
     <title>Class Schedule</title>
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css' rel='stylesheet' />
@@ -83,6 +83,6 @@ return (
         </div>
 
     </body>
-</div>
+</html>
 );
 }

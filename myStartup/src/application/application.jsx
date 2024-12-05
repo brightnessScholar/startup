@@ -44,8 +44,6 @@ export function Application() {
     
     
 return (
-
-<div>
     <body>
         <div class="navigationBar">
             <nav> 
@@ -78,12 +76,6 @@ return (
         </div>
     
     </body>
-
-    <footer>
-        <p><a href="https://github.com/brightnessScholar/startup">MyGithub</a></p>
-    </footer>
-
-</div>
 );
 
 }

@@ -60,8 +60,6 @@ export default function App() {
           <Route path='/database' element={<Database />} />
           <Route path='/websocket' element={<Websocket />} />
         </Routes>
-
-        <main>App components go here</main>
   
         <footer className='bg-dark text-white-50'>
           <div className='container-fluid'>
